@@ -29,8 +29,6 @@ function App() {
   ])
 
   const result = Array.from(item.map((item, index) => {
-    console.log(item.img)
-
     return(
       <Item key={index}
         text={item.text}
