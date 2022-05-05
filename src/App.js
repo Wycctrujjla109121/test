@@ -1,23 +1,49 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+
+//  COMPONENTS
+import Item from './card/Item.jsx';
+// IMG 
+import img0 from './card/svg/Aizen.jpg'
+import img1 from './card/svg/Aizen.jpg'
+import img2 from './card/svg/Aizen.jpg'
 
 function App() {
+
+  const [item, setItem] = useState([
+    {
+      id: 1,
+      text: 'хуй-1',
+      img: {img0}
+    },
+    {
+      id: 2,
+      text: 'хуй-2',
+      img: {img1}
+    },
+    {
+      id: 3,
+      text: 'хуй-3',
+      img: {img2}
+    }
+  ])
+
+  const result = Array.from(item.map((item, index) => {
+    console.log(item.img)
+
+    return(
+      <Item key={index}
+        text={item.text}
+        img={item.img}
+        />
+        )
+      }));
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='list'>
+        {result}
+      </div>
     </div>
   );
 }
