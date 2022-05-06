@@ -13,12 +13,12 @@ function App() {
   const [item, setItem] = useState([
     {
       id: 1,
-      text: 'test1',
+      text: 'test-1',
       img: {img0}
     },
     {
       id: 2,
-      text: 'test2',
+      text: 'test-2',
       img: {img1}
     },
     {
